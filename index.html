@@ -1,0 +1,542 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Welcome to Craft with RK</title>
+
+	<style>
+		/* Spinner */
+		.preloader-wrapper{
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			transition: all .7s ease;
+		}
+
+		.fade-out-animation{
+			opacity: 0;
+			visibility: hidden;
+		}
+
+		/* Navbar Style */
+		.white-navbar-toggler .navbar-toggler-icon {
+  color: white;
+  background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" width="30" height="30"><path stroke="rgba(255, 255, 255, 1)" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10" d="M4 7h22M4 15h22M4 23h22"/></svg>');
+}
+
+		.navbar {
+			background-color: #333;
+			}
+		.nav-link {
+			color: #fff;
+			}
+		.navbar-brand img {
+			  margin-right: 10px;
+			}
+		.navbar-brand {
+			font-size: 1.3em;
+			color: white;
+			font-family: Tahoma;
+			}
+	
+		/* Hero style */
+		.parallax-image{
+        	background-image: url("flower.png");
+     		height: 100%;
+			width: 100%;
+			position: relative;
+        	background-size: cover;
+        	background-repeat: no-repeat;
+        	background-position: center;
+        	background-attachment: fixed;
+      }
+		#hero h1 {
+			font-size: 40px;
+			line-height: 1.2;
+			margin-top: 150px;
+			font-weight: 800;
+			color: #fff;
+			text-shadow: 0px 0px 10px rgb(16, 14, 14);
+			}
+		#hero p {
+			font-size: 24px;
+			margin-top: 10px;
+			font-weight: 400;
+			color: #fff;
+			text-shadow: 0px 0px 10px rgb(16, 14, 14);
+			}
+		.hover-effect:hover {
+			  animation-name: shake;
+			  animation-duration: 1s;
+			  animation-iteration-count: 10;
+			}
+	
+	@keyframes shake {
+		 0% { transform: translateX(0); }
+		  25% { transform: translateX(-5px); }
+		  50% { transform: translateX(5px); }
+		  75% { transform: translateX(-5px); }
+		  100% { transform: translateX(0); }
+		}
+	
+		#about-us {
+			padding-top: 70px;
+		}
+		.about-us-h1{
+			font-size: 30px;
+			margin-bottom: 1rem;
+			line-height: 1.2;
+			font-weight: 800;
+			font-family: Tahoma;
+			color: #333;
+			text-align: center;
+			}
+		.about-us-h3{
+			font-size: 28px;
+			margin-bottom: 1rem;
+			line-height: 1.2;
+			font-weight: 800;
+			font-family: Tahoma;
+			color: #333;
+			text-align: center;
+			}
+		.about-us-p{
+			font-size: 18px;
+			margin-bottom: 1rem;
+			font-weight: 400;
+			font-family: Tahoma;
+			color: #333;
+			text-align: justify;
+			}
+		#AboutUsimage1, #AboutUsimage2 {
+			border-radius: 15px;
+		}
+		#AboutUsimage2 {
+			margin-bottom: 50px;
+		}
+		/* Services Style */
+		.services-h1 {
+			font-size: 2rem;
+			margin-top: 2rem;
+			line-height: 1.2;
+			font-weight: 800;
+			font-family: Tahoma;
+			color: white;
+			text-shadow: 0px 0px 10px rgb(16, 14, 14);	
+		}
+		.services-p {
+			font-size:18px;
+			text-align: justify;
+			color: #fff;
+			text-shadow: 0px 0px 10px rgb(16, 14, 14);
+			font-family: Tahoma;
+		} 
+		#image1, #image2, #image3 {
+			border-radius: 15px;
+			height: 30rem;
+		}
+		.image1-p, .image2-p, .image3-p {
+			font-size: 20px;
+			color: #fff;
+			text-shadow:0px 0px 10px rgb(16, 14, 14);
+			text-align: justify;
+			font-family: Tahoma;
+		}
+		@media (max-width: 767px) {
+  		.services-p {
+    		font-size: 1.2rem;
+  }
+  		.image1-p, .image2-p,.image3-p {
+    		margin-top: 20px;
+  }
+  		#image1, #image2, #image3 {
+    		max-width: 100%;
+  }
+  		.embed-responsive {
+    		height: 250px;
+    		margin-bottom: 30px;
+  }
+}
+	
+		/* Contact Style */
+	
+		#contact {
+			padding-top: 70px;
+		}
+	
+		#contact-us {
+			font-size: 18px;
+			text-align: justify;
+			font-family: Tahoma;
+		}
+		#maps {
+			padding-top: 30px;
+		}
+
+		/* Modal Style */
+		@media (max-width: 576px) {
+  		.modal-dialog {
+    		margin: 0;
+   	 		max-width: 100%;
+    		width: 100%;
+  }
+}
+		</style>
+  </head>
+  <body>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/js/bootstrap.min.js"></script>
+
+	<!-- Spinner -->
+	<div class="preloader-wrapper">
+		<div class="spinner-grow text-secondary">
+			<span class="visually hidden">
+			</span>
+		</div>
+	</div>
+
+	<!-- Navbar -->
+	<div class="header-background"> 
+        <div id="nav" classes="sticky-nav">
+    <nav class="navbar navbar-expand-lg ">
+        <div class="container-fluid">
+          <a id ="brand" class="navbar-brand text-black font-weight-bold d-flex align-items-center" href="#">
+			<img src="Logo.PNG" width="50" height="50" class="d-inline-block align-top" alt="Logo">Craft with RK</a>
+			<button class="navbar-toggler white-navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			  </button>
+			  
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0" style="font-family: Arial;">
+              <li class="nav-item">
+                <a class="nav-link active text-black" aria-current="page" href="#hero">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-black" href="#about-us">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-black" href="#services">Services</a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link text-black" href="#contact">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div>
+	
+<!-- Hero -->
+<section id="hero" class="parallax-image">
+	<div class="container-fluid d-flex justify-content-center align-items-center">
+	  <div class="row justify-content-end">
+		<div class="col-lg-8 text-center">
+		  <h1  class="animate__animated animate__bounceIn animate__slow hover-effect">WELCOME TO CRAFT WITH RK!</h1>
+		  <p iclass="animate__animated animate__bounceIn animate__slow hover-effect">
+			Struggling to find the perfect gift for your loved ones? Look no further! Our handmade crochet flower bouquets make for a thoughtful and everlasting present that your special someone will cherish. Our flowers are crafted with care and will undoubtedly be adored by your loved ones.
+		  </p>
+		</div>
+	  </div>
+	</div>
+  </section>
+  
+
+  <!-- About Us section-->
+  <section id="about-us" >
+    <div class="container">
+		<div class="row">
+			<div class="col-12">
+			  <h1 class="about-us-h1 text-center">About Us</h1>
+			</div>
+		  </div>
+		<div class="row d-flex align-items-center">
+			<div class="col-md-4">
+			  <img src="AboutUs.jpg" id="AboutUsimage1" width="300" class="img-fluid" alt="About us image">
+			</div>
+			<div class="col-md-8">
+				<h3 class="about-us-h3">Meet Raven and Kim!</h3>
+				<p class="about-us-p">Raven and Kim are college students of Pamantasan ng Cabuyao currently taking Bachelor of Sciences in Information Technology and Bachelor of Sciences in Electronics Engineering. By combining their passion for creativity and their drive to support their education financially, Raven and Kim have created a business that not only provides a unique and thoughtful gift option but also empowers young entrepreneurs to pursue their dreams.</p> 
+			</div>
+		  </div>  
+		  <div class="row d-flex align-items-center">
+			<div class="col-md-8 order-2 order-md-1">
+				<h3 class="about-us-h3">Our Mission</h3>
+				<p class="about-us-p">Craft with RK is dedicated to creating unique and high-quality crochet flower arrangements that are perfect for any occasion, from weddings to birthdays to just brightening up someone's day. Their mission is to inspire creativity and bring a smile to people's faces with their beautiful, handmade creations.</p>
+			</div>
+			<div class="col-md-4 order-1 order-md-2">
+			  <img src="AboutUs1.jpg" id="AboutUsimage2" width="300" class="img-fluid" alt="About us image 2">
+			</div>
+		  </div>  
+	  </div>
+	</section>	
+
+  <!-- Services Section -->
+  <section id="services" class="parallax-image">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<h1 class="services-h1 text-center">Services</h1>
+				<p class="services-p text-center">Craft with RK sells everlasting crochet flower bouquets. We have also added animal keychain crochet to our list! Watch the video below to see how adorable they are!</p>
+			  </div>
+		  </div>
+		<div class="row d-flex align-items-center">
+			<div class="col-md-4">
+				<img src="image1.png" id="image1" width="300" class="img-fluid" alt="Image 1">
+			</div>
+			<div class="col-md-8">
+				<p class="image1-p">Here are the price list of our products. Craft with RK made sure that those prices are worth its hype. Craft with RK's products are not only reasonably priced, but also crafted with the highest quality materials and attention to detail.</p>
+			</div>
+		  </div>  
+		  <div class="row d-flex align-items-center">
+			<div class="col-md-8 order-2 order-md-1">
+				<p class="image2-p">This the other product design will demonstrate that what you see is exactly what you will receive. Craft with RK takes pride in producing high-quality products that exceed customer expectations. </p>
+			</div>
+			<div class="col-md-4 order-1 order-md-2">
+				<img src="image2.jpg" id="image2" width="300" class="img-fluid" alt="Image 2">
+			</div>
+		  </div>  
+		  <div class="row d-flex align-items-center">
+			<div class="col-md-4">
+				<img src="image3.jpg" id="image3" width="300" class="img-fluid" alt="Image 3">
+			</div>
+			<div class="col-md-8">
+				<p class="image3-p">Let Craft with RK introduce their new product. You'll surely love how these keychains add a touch of personality to your everyday items.  Craft with RK's animal keychain crochet is a perfect gift for your family and friends who loves cute and unique accessories.</p>
+			</div>
+		  </div> 
+		  <div class="row mt-5">
+			<div class="col-12">
+			  <div class="embed-responsive embed-responsive-16by9 mx-auto" style="max-width: 800px;">
+				<iframe src="https://www.youtube.com/embed/BNItGkXfABA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+			  </div>
+			</div>
+		  </div>  
+		</div>
+	  </div>
+</section>  
+  
+
+<!-- Contact Us Section -->
+<section id="contact" class="parallax-zoom" data-speed="0.8">
+	<div class="container">
+		<div class="row">
+		  <div id="contact-us"class="col-md-6">
+			<h2>Contact Us</h2>
+			<p>Fill out the form below or contact us via phone or social media.</p>
+			<ul>
+			  <li>Facebook: Raven SanJuan & Kemuel Pilapil Nite</li>
+			  <li>Phone: 09069668492</li>
+			  <li>Address: 78 Banaybanay, Cabuyao City, Laguna</li>
+			</ul>
+		  </div>
+		  <div class="col-md-6">
+			<form id="contact-form" method="POST" >
+				<div class="row">
+					<div class="form-group col-sm-6">
+						<label for="name" class="h4">Name</label>
+						<input type="text" class="form-control" id="name" placeholder="Enter name" required>
+					</div>
+					<div class="form-group col-sm-6">
+   						 <label for="email" class="h4">Email</label>
+    					<input type="email" class="form-control" id="email" placeholder="Enter email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="message" class="h4">Message</label>
+					<textarea id="message" class="form-control" rows="5" placeholder="Enter your message" required></textarea>
+				</div>
+				<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#contactModal">
+					Submit Message
+				  </button>
+			</form>
+			  <!-- Modal -->
+			  <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				<div class="modal-dialog modal-dialog-centered" style="max-width: 350px;">
+				  <div class="modal-content">
+					<div class="modal-header">
+					  <h5 class="modal-title" id="exampleModalLabel">Submit Message</h5>
+					  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body">
+					  <p>Your message has been submitted!</p>
+					</div>
+					<div class="modal-footer">
+					  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+					</div>
+				  </div>
+				</div>
+			  </div>
+		  </div>	  
+	  </div>
+	  <div class="row">
+		<div id="maps"class="col-12">
+		  <div class="embed-responsive embed-responsive-16by9">
+			<iframe class="embed-responsive-item" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3866.891992491408!2d121.1312832!3d14.2595207!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397d88258da3383%3A0x3db6c2402700f58f!2sPamantasan%20ng%20Cabuyao!5e0!3m2!1sen!2sph!4v1683118821996!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+		  </div>
+		</div>
+	  </div>	  
+  </section>
+
+
+  <!-- Footer -->
+  <footer class="bg-light py-5">
+	<div class="container">
+	  <div class="row">
+		<div class="col-md-4">
+			<img src="Logo.PNG" width="70" height="70" class="d-inline-block align-top" alt="Logo">
+		  <p>
+			Craft with RK specializes in creating handmade crochets that made for thoughtful gifts.</p>
+		  <p>&copy; 2023 Craft with RK. All Rights Reserved.</p>
+		</div>
+		<div class="col-md-4">
+		  <h5>Links</h5>
+		  <ul class="list-unstyled">
+			<li><a href="#nav">Sitemap</a></li>
+			<li><a href="#contact">Contact</a></li>
+		  </ul>
+		</div>
+		<div class="col-md-4">
+		  <h5>Stay Connected!</h5>
+		  <p>Sign up for to receive the latest updates of Craft with RK!</p>
+		  <form>
+			<div class="input-group mb-3">
+			  <input type="email" class="form-control" placeholder="Enter your email address" aria-label="Email address" aria-describedby="button-addon2">
+			  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#signUpModal">
+				SignUp
+			  </button>
+			</div>
+		  </form>
+		   <!-- Modal -->
+		   <div class="modal fade" id="signUpModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered" style="max-width: 350px;">
+			  <div class="modal-content">
+				<div class="modal-header">
+				  <h5 class="modal-title" id="exampleModalLabel">Submit Message</h5>
+				  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+				  <p>Your email has been submitted succesfully.</p>
+				</div>
+				<div class="modal-footer">
+				  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+				</div>
+			  </div>
+			</div>
+		  </div>
+	  </div>	  
+  </div>
+		  <div class="d-flex justify-content-start">
+			<a href="#" class="me-4"><i class="fab fa-facebook-f"></i></a>
+			<a href="#" class="me-4"><i class="fab fa-twitter"></i></a>
+			<a href="#" class="me-4"><i class="fab fa-instagram"></i></a>
+		  </div>
+		</div>
+	  </div>
+	</div>
+	<div class="alert alert-info alert-dismissible fade show" role="alert">
+    <strong>Privacy Policy:</strong> This website uses cookies to improve your experience. By using this site, you agree to our <a href="#privacy-policy" data-bs-toggle="modal" data-bs-target="#privacy-policy">Privacy Policy</a>.
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+
+  <!-- Privacy Policy Modal -->
+  <div class="modal fade" id="privacy-policy" tabindex="-1" aria-labelledby="privacy-policy-label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" style="max-width: 350px;">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="privacy-policy-label">Privacy Policy</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>This privacy policy sets out how this website uses and protects any information that you give when you use this website.</p>
+          <p>We are committed to ensuring that your privacy is protected. Should we ask you to provide certain information by which you can be identified when using this website, then you can be assured that it will only be used in accordance with this privacy statement.</p>
+          <p>We may change this policy from time to time by updating this page. You should check this page from time to time to ensure that you are happy with any changes. This policy is effective from [May 6, 2023].</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  </footer>
+  	<script>
+		const preloaderWrapper = document.querySelector('.preloader-wrapper');
+
+		window.addEventListener('load', function(){
+			preloaderWrapper.classList.add('fade-out-animation');
+		});
+	</script>
+	<script>
+		$(function() {
+		  // submit form data via AJAX
+		  $("#contact-form").submit(function(event) {
+			event.preventDefault(); // prevent form from submitting normally
+	
+			const form = $(this).serialize();
+	
+			$.ajax({
+			  method: "POST",
+			  url: 'emailsent.php',
+			  data: form,
+			  success: function(response) {
+				// display success message
+				var myModal = new bootstrap.Modal(document.getElementById('contactModal'), {
+				  keyboard: false
+				});
+				myModal.show();
+	
+				$("#contact-form")[0].reset();
+			  },
+			  error: function() {
+				// display error message
+				alert('error submitting message');
+			  }
+			});
+		  });
+		});
+	</script>
+	<script>
+		$(function() {
+		  // submit form data via AJAX
+		  $("#signUpModal").submit(function(event) {
+			event.preventDefault(); // prevent form from submitting normally
+	
+			const form = $(this).serialize();
+	
+			$.ajax({
+			  method: "POST",
+			  url: 'emailsent.php',
+			  data: form,
+			  success: function(response) {
+				// display success message
+				var myModal = new bootstrap.Modal(document.getElementById('signUpModal'), {
+				  keyboard: false
+				});
+				myModal.show();
+	
+				$("#signUpModal")[0].reset();
+			  },
+			  error: function() {
+				// display error message
+				alert('error submitting message');
+			  }
+			});
+		  });
+		});
+	</script>
+	
+  </body>
+</html>
